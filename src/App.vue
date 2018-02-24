@@ -24,7 +24,6 @@ export default {
 <template>
   <div>
     <v-header></v-header>
-    <v-goods></v-goods>
     <div class="tab border-1px">
       <div class="tab-item">
         <router-link :to="{name:'goods',params:{num:123}}">商品</router-link>
@@ -42,11 +41,15 @@ export default {
 
 <script>
   import header from './components/header/header.vue';
-  import goods from './components/goods/goods.vue';
+
   export default{
+      data() {
+        return {
+          seller: {}
+        };
+      },
       components: {
-        'v-header': header,
-        'v-goods': goods
+        'v-header': header
       }
   };
 </script>
